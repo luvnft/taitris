@@ -1,0 +1,17 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Python template
+
+# OSX Residuals
+*.DS_Store
+*.yaml
+*.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*$pyc
+
+# docstrings
+logs/
+tests/
