@@ -1,9 +1,9 @@
 import asyncio
 import fire
 
-from taitrisgpt.memory.memory import Memory
-from taitrisgpt.logs import logger
-from taitrisgpt.roles import Planner
+from taitriscore.memory.memory import Memory
+from taitriscore.logs import logger
+from taitriscore.roles import Planner
 
 import pdb
 

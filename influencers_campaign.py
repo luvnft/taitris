@@ -1,9 +1,9 @@
 import asyncio
 import fire
 
-from taitrisgpt.roles import LeadGenerator, OutreachSales, Negotiator
-from taitrisgpt.campaign import Campaign
-from taitrisgpt.logs import logger
+from taitriscore.roles import LeadGenerator, OutreachSales, Negotiator
+from taitriscore.campaign import Campaign
+from taitriscore.logs import logger
 
 import pdb
 

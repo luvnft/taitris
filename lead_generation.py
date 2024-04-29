@@ -1,8 +1,8 @@
 import asyncio
 
-from taitrisgpt.memory.memory import Memory
-from taitrisgpt.logs import logger
-from taitrisgpt.roles import LeadGenerator
+from taitriscore.memory.memory import Memory
+from taitriscore.logs import logger
+from taitriscore.roles import LeadGenerator
 
 import pdb
 
