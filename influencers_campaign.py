@@ -5,7 +5,6 @@ from taitriscore.roles import LeadGenerator, OutreachSales, Negotiator
 from taitriscore.campaign import Campaign
 from taitriscore.logs import logger
 
-import pdb
 
 async def influencers_campaign(company: str, objective: str, 
                                 n_round: int = 5,
