@@ -1,17 +1,16 @@
 from __future__ import annotations
 
-from typing import Iterable, Set, List, Type
+import pdb
+from typing import Iterable, List, Set, Type
 
 from pydantic import BaseModel, Field
 
-from taitriscore.config import CONFIG
 from taitriscore.actions import Action, ActionOutput
+from taitriscore.config import CONFIG
 from taitriscore.llm import LLM
 from taitriscore.logs import logger
 from taitriscore.memory.memory import Memory
 from taitriscore.utils.schema import Message
-
-import pdb
 
 PREFIX_TEMPLATE = """You are a {profile}, named {name}, your goal is {goal}, and the constraint is {constraints}. """
 

@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing_extensions import Type, TypedDict
 
 from pydantic import BaseModel
+from typing_extensions import Type, TypedDict
 
 from taitriscore.logs import logger
 

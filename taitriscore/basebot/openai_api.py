@@ -1,23 +1,21 @@
 import abc
 import asyncio
+import pdb
 import time
 from functools import wraps
 from typing import NamedTuple
 
+import openai
 import torch
 
 from taitriscore.basebot.base_gpt_api import BaseGPTAPI
-from taitriscore.logs import logger
 from taitriscore.config import CONFIG, Singleton
+from taitriscore.logs import logger
 from taitriscore.utils.token_counter import (
     TOKEN_COSTS,
     count_message_tokens,
     count_string_tokens,
 )
-
-import openai
-
-import pdb
 
 
 def retry(max_retries):

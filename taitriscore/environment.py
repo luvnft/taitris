@@ -1,4 +1,5 @@
 import asyncio
+import pdb
 from typing import Iterable
 
 from pydantic import BaseModel, Field
@@ -6,8 +7,6 @@ from pydantic import BaseModel, Field
 from taitriscore.memory import Memory
 from taitriscore.roles import Role
 from taitriscore.utils.schema import Message
-
-import pdb
 
 
 class Environment(BaseModel):

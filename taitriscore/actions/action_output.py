@@ -1,4 +1,5 @@
 from typing import Dict, Type
+
 from pydantic import BaseModel, create_model, root_validator, validator
 
 

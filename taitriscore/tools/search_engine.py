@@ -4,9 +4,8 @@ import json
 
 from taitriscore.config import CONFIG
 from taitriscore.logs import logger
-from taitriscore.tools.search_engine_serpapi import SerpAPIWrapper
-
 from taitriscore.tools import SearchEngineType
+from taitriscore.tools.search_engine_serpapi import SerpAPIWrapper
 
 
 class SearchEngine:

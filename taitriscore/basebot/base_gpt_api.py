@@ -1,8 +1,8 @@
 from abc import abstractmethod
 from typing import Optional
 
-from taitriscore.logs import logger
 from taitriscore.basebot.base_chatbot import BaseChatbot
+from taitriscore.logs import logger
 
 
 class BaseGPTAPI(BaseChatbot):

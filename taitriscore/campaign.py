@@ -1,12 +1,12 @@
+import pdb
+
 from pydantic import BaseModel, Field
 
-from taitriscore.environment import Environment
 from taitriscore.config import CONFIG
+from taitriscore.environment import Environment
 from taitriscore.logs import logger
 from taitriscore.roles import Role
 from taitriscore.utils.schema import Message
-
-import pdb
 
 
 class Campaign(BaseModel):

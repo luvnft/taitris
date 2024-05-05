@@ -1,19 +1,16 @@
-import os
-
 import abc
+import os
+import pdb
 
-from dotenv import load_dotenv
 import yaml
+from dotenv import load_dotenv
 
 from taitriscore.const import PROJECT_ROOT
 from taitriscore.logs import logger
 from taitriscore.tools import SearchEngineType, WebBrowserEngineType
 
-import pdb
-
-
 # Load .env file
-dotenv_path = PROJECT_ROOT / '.env'
+dotenv_path = PROJECT_ROOT / ".env"
 load_dotenv(dotenv_path=dotenv_path)
 
 
@@ -42,7 +39,7 @@ class Config(metaclass=Singleton):
         self._init_with_config_files_and_env(self._configs, yaml_file)
         logger.info("Config loading done.")
         self.max_tokens_rsp = self._get("MAX_TOKENS", 2048)
-        self.anthropic_api_key = self._get('ANTHROPIC_API_KEY')
+        self.anthropic_api_key = self._get("ANTHROPIC_API_KEY")
         self.anthropic_api_base = self._get("ANTHROPIC_API_BASE")
         self.anthropic_model = self._get("ANTHROPIC_MODEL")
         self.serpapi_api_key = self._get("SERPAPI_API_KEY")

@@ -15,6 +15,7 @@ def get_project_root():
             raise Exception("Project root not found.")
         current_path = parent_path
 
+
 try:
     PROJECT_ROOT = get_project_root()
     DATA_PATH = PROJECT_ROOT / "data"

@@ -1,15 +1,20 @@
 import abc
 import asyncio
+import pdb
 import time
 from functools import wraps
 from typing import NamedTuple
 
 import torch
-from torch import cuda, bfloat16
 import transformers
-from transformers import pipeline
 from langchain.llms import HuggingFacePipeline
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+from torch import bfloat16, cuda
+from transformers import (
+    AutoModelForCausalLM,
+    AutoTokenizer,
+    BitsAndBytesConfig,
+    pipeline,
+)
 
 from taitriscore.basebot.base_gpt_api import BaseGPTAPI
 from taitriscore.config import CONFIG, Singleton
@@ -19,8 +24,6 @@ from taitriscore.utils.token_counter import (
     count_message_tokens,
     count_string_tokens,
 )
-
-import pdb
 
 
 class RateLimiter:
@@ -103,8 +106,7 @@ class LLAMAV2API(BaseGPTAPI, RateLimiter):
                 bnb_4bit_compute_dtype=bfloat16,
             )
             model_config = transformers.AutoConfig.from_pretrained(
-                CONFIG.llama_model_name,
-                use_auth_token=CONFIG.HUGGINGFACE_API_KEY
+                CONFIG.llama_model_name, use_auth_token=CONFIG.HUGGINGFACE_API_KEY
             )
             self.model = transformers.AutoModelForCausalLM.from_pretrained(
                 CONFIG.llama_model_name,
@@ -117,10 +119,18 @@ class LLAMAV2API(BaseGPTAPI, RateLimiter):
             )
         else:
             self.tokenizer.pad_token = self.tokenizer.eos_token
-            self.bnb_config = BitsAndBytesConfig(load_in_4bit=True,bnb_4bit_quant_type="nf4",bnb_4bit_compute_dtype=torch.float16,)
-            self.model = AutoModelForCausalLM.from_pretrained(CONFIG.llama_model_name,quantization_config=self.bnb_config,trust_remote_code=True)
+            self.bnb_config = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_compute_dtype=torch.float16,
+            )
+            self.model = AutoModelForCausalLM.from_pretrained(
+                CONFIG.llama_model_name,
+                quantization_config=self.bnb_config,
+                trust_remote_code=True,
+            )
             self.model.config.use_cache = False
-            
+
         self.model = self.model.eval()
         self.pipe = pipeline(
             "text-generation",
@@ -173,7 +183,9 @@ class LLAMAV2API(BaseGPTAPI, RateLimiter):
         if CONFIG.update_costs:
             prompt_tokens = int(usage["prompt_tokens"])
             completion_tokens = int(usage["completion_tokens"])
-            self._cost_manager.update_cost(prompt_tokens, completion_tokens, CONFIG.llama_model_name)
+            self._cost_manager.update_cost(
+                prompt_tokens, completion_tokens, CONFIG.llama_model_name
+            )
 
     def get_costs(self) -> Costs:
         return self._cost_manager.get_costs()

@@ -40,7 +40,7 @@ TOKEN_MAX = {
     "gpt-3.5-turbo": 4096,
     "meta-llama/Llama-2-7b-chat-hf": 8192,
     "text-embedding-ada-002": 8192,
-    "TinyPixel/Llama-2-7B-bf16-sharded": 8192
+    "TinyPixel/Llama-2-7B-bf16-sharded": 8192,
 }
 
 TOKEN_COSTS = {
@@ -80,8 +80,9 @@ TOKEN_COSTS = {
 #             num_tokens += len(encoding.encode(value))
 #             if key == "name":
 #                 num_tokens += tokens_per_name
-#     num_tokens += 3  
+#     num_tokens += 3
 #     return num_tokens
+
 
 def count_message_tokens(messages, model="gpt-3.5-turbo-0613"):
     return 10

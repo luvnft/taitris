@@ -1,6 +1,6 @@
 from taitriscore.actions import SearchAndSummarize
-from taitriscore.tools import SearchEngineType
 from taitriscore.roles import Role
+from taitriscore.tools import SearchEngineType
 
 
 class LeadGenerator(Role):
