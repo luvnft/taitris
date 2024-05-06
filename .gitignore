@@ -3,7 +3,7 @@
 
 # OSX Residuals
 *.DS_Store
-*.yaml
+# *.yaml
 *.env
 
 # Byte-compiled / optimized / DLL files
