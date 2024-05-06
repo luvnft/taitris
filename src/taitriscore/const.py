@@ -17,14 +17,14 @@ def get_project_root():
 
 
 try:
-    PROJECT_ROOT = get_project_root()
+    PROJECT_ROOT = get_project_root() / 'src'
     DATA_PATH = PROJECT_ROOT / "data"
     WORKSPACE_ROOT = PROJECT_ROOT / "workspace"
     PROMPT_PATH = PROJECT_ROOT / "taitriscore/prompts"
     TMP = PROJECT_ROOT / "tmp"
     RESEARCH_PATH = DATA_PATH / "research"
 except:
-    PROJECT_ROOT = Path("/Users/belhalkarimi/Desktop/Belhal/Tech/taitris/taitris-ai")
+    PROJECT_ROOT = Path("/Users/belhalkarimi/Desktop/Belhal/Tech/taitris/taitris-ai/src")
     DATA_PATH = PROJECT_ROOT / "data"
     WORKSPACE_ROOT = PROJECT_ROOT / "workspace"
     PROMPT_PATH = PROJECT_ROOT / "taitriscore/prompts"

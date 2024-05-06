@@ -1,0 +1,38 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1b2735 0%, #090a0f 100%);
+  color: #ccc;
+}
+
+.container {
+  text-align: center;
+  padding-top: 10vh;
+}
+
+h1 {
+  color: #0dafff;
+  font-size: 2.5rem;
+}
+
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #ffffff;  /* White background for the text box */
+  border: 2px solid #0dafff;  /* Blue border color */
+  border-radius: 30px;
+  color: #0dafff;  /* Blue text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Round the focus indicator */
+input:focus {
+  border-radius: 30px; /* Set border-radius to match the shape of the input */
+  border-color: #06c;
+  box-shadow: 0 4px 6px rgba(0, 114, 255, 0.3);
+}
