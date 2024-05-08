@@ -138,7 +138,8 @@ class OpenAIGPTAPI(BaseGPTAPI, RateLimiter):
         return usage
 
     def _call_chat(self, messages):
-        # res = self.llm.ChatCompletion.create(**self._cons_kwargs(messages))
+        tmp_input = self._cons_kwargs(messages)
+        # res = self.llm.ChatCompletion.create(**tmp_input)
         res = "all good"
         return res
 

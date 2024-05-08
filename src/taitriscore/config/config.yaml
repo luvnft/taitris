@@ -15,7 +15,7 @@ OPENAI_MODEL: "gpt-3.5-turbo"
 ANTHROPIC_API_BASE: "https://api.anthropic.com"
 ANTHROPIC_MODEL: "claude-3-opus-20240229"
 
-MAX_TOKENS: 500
+MAX_TOKENS: 100
 RPM: 10
 UPDATE_COSTS: True
 CALC_USAGE: True
