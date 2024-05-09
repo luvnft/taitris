@@ -67,7 +67,7 @@ class Planner(Role):
         tasks = ["Develop a task list for your Objective."]
         completed_tasks = []
 
-        max_rounds = 5
+        max_rounds = 2
         for r in range(1, max_rounds + 1):
             logger.info(f"Round - {r}")
             for t in tasks:
@@ -104,6 +104,8 @@ class Planner(Role):
                 objective, new_tasks + tasks
             )
             tasks = await self._llm.aask(finaltodo)
+            tasks = tasks['choices'][0].message.content
+            
             # pdb.set_trace()
             logger.info(tasks)
 
