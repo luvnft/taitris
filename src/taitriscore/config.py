@@ -80,6 +80,7 @@ class Config(metaclass=Singleton):
         self.openai_api_key = self._get("OPENAI_API_KEY")
         self.openai_api_base = self._get("OPENAI_API_BASE")
         self.openai_model = self._get("OPENAI_MODEL")
+        self.gmail_password = self._get("GMAIL_PASSWORD")
         self.huggingface_api_key = self._get("HUGGINGFACE_API_KEY")
         self.llama_model_name = self._get("LLAMA_MODEL_NAME")
         self.search_engine = self._get("SEARCH_ENGINE", SearchEngineType.SERPAPI_GOOGLE)

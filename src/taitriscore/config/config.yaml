@@ -23,3 +23,9 @@ CALC_USAGE: True
 ### for Research
 MODEL_FOR_RESEARCHER_SUMMARY: "gpt-3.5-turbo"
 MODEL_FOR_RESEARCHER_REPORT: "gpt-3.5-turbo-16k"
+
+### for emailing
+
+GMAIL_ADDRESS: "@gmail.com"
+GMAIL_PASSWORD: ${GMAIL_PASSWORD}
+RECEIVER_EMAIL: "@gmail.com"
