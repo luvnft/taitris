@@ -38,6 +38,8 @@ function App() {
         <Typography variant="h4" gutterBottom sx={{ mb: 6, color: theme.palette.text.secondary }}>
       <span style={{ fontFamily: 'Pacifico, cursive' }}>Taitris</span> - Influencer Marketing Automation
     </Typography>
+    </Container>
+    <Container maxWidth="lg" sx={{ padding: '0% 0', textAlign: 'left' }}>
           <Grid container spacing={2}>
             <Grid item xs={12} md={showResults ? 4 : 12}>
               <Card variant="outlined" sx={{ p: 2, mx: 'auto', mb: 3, backgroundColor: theme.palette.background.paper, color: theme.palette.text.primary }}>

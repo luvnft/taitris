@@ -32,7 +32,7 @@ class Planner(Role):
         Take into account these previously completed tasks:
         {completed_task_bullets}
 
-        Your task: {todo['task']}
+        Your task: {task}
         Response:
         """
         return ExecutionOutputTemplate
@@ -83,7 +83,7 @@ class Planner(Role):
                 objective, todo, completed_tasks[-5:]
             )
             res = await self._llm.aask(tmp_todo)
-            todo["result"] = res['choices'][0].message.content
+            todo["result"] = res['choices'][0]['message']['content']
 
             # Step 2: Store the result in completed task
             completed_tasks.append(todo)
@@ -93,7 +93,7 @@ class Planner(Role):
                 objective, todo["task"], todo["result"], tasks
             )
             new_task = await self._llm.aask(newtodo)
-            new_tasks = [new_task['choices'][0].message.content]
+            new_tasks = [new_task['choices'][0]['message']['content']]
 
             logger.info("Adding new tasks to task_storage")
             for t in new_tasks:
@@ -104,7 +104,7 @@ class Planner(Role):
                 objective, new_tasks + tasks
             )
             tasks = await self._llm.aask(finaltodo)
-            tasks = tasks['choices'][0].message.content
+            tasks = tasks['choices'][0]['message']['content']
             
             # pdb.set_trace()
             logger.info(tasks)

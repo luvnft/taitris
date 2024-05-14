@@ -140,7 +140,25 @@ class OpenAIGPTAPI(BaseGPTAPI, RateLimiter):
     def _call_chat(self, messages):
         # tmp_input = self._cons_kwargs(messages)
         # res = self.llm.ChatCompletion.create(**tmp_input)
-        res = "all good"
+        
+        res = {"choices": [
+                    {
+                    "index": 0,
+                    "message": {
+                        "role": "assistant",
+                        "content": "all good."
+                    },
+                    "logprobs": 'null',
+                    "finish_reason": "stop"
+                    }
+                ],
+                "usage": {
+                    "prompt_tokens": 102,
+                    "completion_tokens": 389,
+                    "total_tokens": 491
+                },
+                "system_fingerprint": 'null'
+                }
         return res
 
     def ask(self, prompt="Can you tell me what you know about Influencers Marketing?"):
