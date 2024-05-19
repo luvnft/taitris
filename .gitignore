@@ -18,3 +18,7 @@ logs/
 
 # app
 node_modules/
+
+#streamlit front
+app/backend/config.toml
+app/backend/stream.py
