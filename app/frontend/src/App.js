@@ -36,7 +36,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Container maxWidth="lg" sx={{ padding: '4% 0', textAlign: 'center' }}>
         <Typography variant="h4" gutterBottom sx={{ mb: 6, color: theme.palette.text.secondary }}>
-      <span style={{ fontFamily: 'Pacifico, cursive' }}>Taitris</span> - Influencer Marketing Automation
+      <span style={{ fontFamily: 'Pacifico, cursive' }}>InfluAI</span> - Influencer Marketing Automation
     </Typography>
     </Container>
     <Container maxWidth="lg" sx={{ padding: '0% 0', textAlign: 'left' }}>

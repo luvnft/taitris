@@ -80,7 +80,7 @@ const Layout = ({ children }) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'Pacifico, cursive' }}>
-            Taitris
+           InfluAI
           </Typography>
           <IconButton
             color="inherit"
