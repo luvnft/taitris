@@ -8,7 +8,6 @@ from taitriscore.logs import logger
 from taitriscore.roles import Role
 from taitriscore.utils.schema import Message
 
-
 class Campaign(BaseModel):
     environment: Environment = Field(default_factory=Environment)
     company: str = Field(default="")
