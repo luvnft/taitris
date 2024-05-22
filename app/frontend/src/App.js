@@ -17,7 +17,7 @@ function App() {
   const handleRunScript = async () => {
     try {
       setShowResults(true); // This will trigger the UI to display the result next to the text box
-      const response = await axios.post('http://localhost:5001/runscript', { objective });
+      const response = await axios.post('https://taitris.vercel.app/runscript', { objective });
       setResult(response.data);
     } catch (error) {
       console.error('Error running script:', error);
