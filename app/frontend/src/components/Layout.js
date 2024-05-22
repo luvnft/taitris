@@ -79,7 +79,7 @@ const Layout = ({ children }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'Pacifico, cursive' }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'Roboto, Pacifico, cursive' }}>
            InfluAI
           </Typography>
           <IconButton
